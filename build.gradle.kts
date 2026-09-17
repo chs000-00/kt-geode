@@ -5,24 +5,20 @@ plugins {
     alias(libs.plugins.kotlinxSerialization)
 }
 
-group = "me.user"
-version = "1.0-SNAPSHOT"
+group = "chs000.kt-geode"
+version = "v1.0.0"
 
 repositories {
     mavenCentral()
 }
 
 kotlin {
-    macosArm64()
-    linuxArm64()
-    linuxX64()
-    mingwX64()
+    macosArm64("ktgeodebuild")
+    mingwX64("ktgeodebuild")
 
     targets.withType<KotlinNativeTarget>().configureEach {
         binaries {
-            executable {
-                entryPoint = "main"
-            }
+            staticLib()
         }
     }
 
