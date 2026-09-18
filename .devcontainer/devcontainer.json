@@ -7,7 +7,12 @@
       "ppa": true,
       "version": "os-provided"
     },
-    "ghcr.io/devcontainers/features/common-utils:2": {}
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/java:1": {
+			"version": "25",
+			"installMaven": "false",
+			"installGradle": "true"
+		}
   },
   "postCreateCommand": "bash .devcontainer/setup.sh",
   "remoteUser": "vscode",
