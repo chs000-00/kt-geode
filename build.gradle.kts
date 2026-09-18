@@ -13,12 +13,17 @@ repositories {
 }
 
 kotlin {
-    macosArm64("ktgeodebuild")
-    mingwX64("ktgeodebuild")
+    macosArm64()
+    linuxX64()
+    mingwX64()
 
     targets.withType<KotlinNativeTarget>().configureEach {
         binaries {
-            staticLib()
+            staticLib {
+                baseName = "native"       // macOS
+                // baseName = "native"    // Linux
+                // baseName = "libnative" // Windows
+            }
         }
     }
 
